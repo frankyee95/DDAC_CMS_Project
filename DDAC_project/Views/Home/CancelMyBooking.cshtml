@@ -1,0 +1,53 @@
+﻿@model DDAC_project.Models.Booking
+@{
+    ViewBag.Title = "Cancel My Booking";
+}
+
+<h1 align="center">Cancel My Booking</h1>
+<hr>
+<div class="row">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                    @using (Html.BeginForm("CancelMyBooking", "Home", FormMethod.Post, null))
+                    {
+                        <fieldset>
+                            <div class="editor-label">
+                                <label for="bookingId">Booking Id</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.bookingId,
+               new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="editor-label">
+                                <label for="scheduleId">Schedule Id</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.scheduleId,
+               new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="editor-label">
+                                <label for="bookingDate">Booking Date</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.bookingDate,
+               new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                            </div>
+                        </fieldset>
+                        <br />
+                    <p align="center" style="color:red;">Are you sure you want to cancel this booking?</p>
+                    <p align="center">
+                        <input class="btn btn-primary" type="submit" value="Yes">
+                    </p>
+                    }
+                    <p align="center">
+                        <button class="btn btn-default">@Html.ActionLink("No", "CancelBooking", "Home")</button>
+                    </p>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>

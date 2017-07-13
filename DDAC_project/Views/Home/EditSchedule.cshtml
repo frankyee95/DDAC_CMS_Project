@@ -1,0 +1,66 @@
+﻿@model DDAC_project.Models.Schedule
+@{
+    ViewBag.Title = "Edit Schedule";
+}
+
+<h1 align="center">Edit Schedule</h1>
+<hr>
+<div class="row">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+            <div class="col-md-8 col-md-offset-2">
+                <p>
+                    @using (Html.BeginForm("EditSchedule", "Home", FormMethod.Post, null))
+                    {
+                        <fieldset>
+                            <div class="editor-label">
+                                <label for="scheduleId">Schedule Id</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.scheduleId,
+               new { htmlAttributes = new {@class="form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="editor-label">
+                                <label for="selectedCargoId">Cargo Id</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.selectedCargoId,
+               new { htmlAttributes = new {@class="form-control", @readonly = "readonly" } })
+                            </div>
+                            <div class="editor-label">
+                                <label for="selectedYardName">Yard Name</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.selectedYardName, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="editor-label">
+                                <label for="selectedVesselName">Vessel Name</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.selectedVesselName, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="editor-label">
+                                <label for="departureDate">Departure Date</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.departureDate, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                            <div class="editor-label">
+                                <label for="arrivalDate">Arrival Date</label>
+                            </div>
+                            <div class="editor-field">
+                                @Html.EditorFor(model => model.arrivalDate, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </fieldset>
+                        <br />
+                    <p align="center">
+                        <input class="btn btn-info" type="submit" value="Save Changes">
+                    </p>
+                    }
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-4"></div>
+        </div>
+    </div>

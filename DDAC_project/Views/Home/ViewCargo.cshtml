@@ -1,0 +1,42 @@
+﻿@model List<DDAC_project.Models.Cargo>
+
+@{
+    ViewBag.Title = "View Cargo";
+}
+
+<style>
+    table, tr, td {
+        border: solid 1px;
+    }
+</style>
+
+<h1 align="center">View Cargo</h1>
+<p>@Html.ActionLink("Create New Cargo", "CreateCargo", "Home")</p>
+<p>
+    @using (Html.BeginForm("ViewCargo", "Home", FormMethod.Post, null))
+    {
+        <fieldset>
+            <table class="table table-hover" style="width:100%;">
+                <tr >
+                    <td style="background-color:darkslateblue; text-align:center; color:white">Cargo Id</td>
+                    <td style="background-color:darkslateblue; text-align:center; color:white">Cargo Name</td>
+                    <td style="background-color:darkslateblue; text-align:center; color:white">Cargo Departure</td>
+                    <td style="background-color:darkslateblue; text-align:center; color:white">Cargo Arrival</td>
+                    <td style="background-color:darkslateblue; text-align:center; color:white">Cargo Volume</td>
+                    <td style="background-color:darkslateblue; text-align:center; color:white">Action</td>
+                </tr>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.cargoId</td>
+                        <td>@item.cargoName</td>
+                        <td>@item.cargoDeparture</td>
+                        <td>@item.cargoArrival</td>
+                        <td>@item.cargoVolume</td>
+                        <td align="center">@Html.ActionLink("Edit", "EditCargo", new { cargoId = @item.cargoId }) / @Html.ActionLink("Delete", "DeleteCargo", new { cargoId = @item.cargoId })</td>
+                    </tr>
+                }
+            </table>
+        </fieldset>
+    }
+    </p>

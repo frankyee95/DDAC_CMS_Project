@@ -1,0 +1,115 @@
+﻿@model DDAC_project.Models.Schedule
+
+@{
+    ViewBag.Title = "Create Schedule";
+}
+
+
+<h2>Create New Schedule</h2>
+<hr>
+
+<form method="post">
+    <p>
+        @using (Html.BeginForm("CreateSchedule", "Home", FormMethod.Post, null))
+        {
+            <fieldset>
+                <div class="form-group">
+                    <h3><b>Cargo Details</b></h3>
+                    <div class="editor-label">
+                        <label for="scheduleId">Schedule Id</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.scheduleId, new { htmlAttributes = new { @class = "form-control", @placeholder = "Please type a random schedule ID" } })
+                    </div>
+                    <br />
+                    <label id="Label1" Font-Size="10pt">List of Cargo :</label>
+
+                    <select class="form-control" id="cargoID" style="min-width: 600px" onclick="Cargo()">
+                        @foreach (var item in Model.cargoList)
+                        {
+                            <option value=@item.cargoId>Cargo Id: @item.cargoId ~~~~ @item.cargoName ~ @item.cargoDeparture ~ @item.cargoArrival ~ @item.cargoVolume</option>
+                        }
+                    </select><br />
+
+                    <div class="editor-label">
+                        <label for="cargoId">Type in the Cargo Id : </label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.selectedCargoId, new { htmlAttributes = new { @class = "form-control", @id = "cargoNameTextField", @readonly = "readonly" } })
+                    </div>
+                    <br />
+                    <div class="editor-label">
+                        <label for="departureDate">Departure Date</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.departureDate,
+                            new { htmlAttributes = new { @class = "datefield", type = "date" } })
+                    </div>
+                    <div class="editor-label">
+                        <label for="arrivalDate">Arrival Date</label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.arrivalDate,
+                            new { htmlAttributes = new { @class = "datefield", type = "date" } })
+                    </div>
+                    <br />
+                </div>
+                <hr>
+                <div>
+                    <h3><b>Yard Details</b></h3>
+                    <label id="Label6" Font-Size="10pt">List of Yard : </label>
+
+                    <select class="form-control" id="yardName" style="min-width: 600px" onclick="Yard()">
+                        @foreach (var item in Model.yardList)
+                        {
+                            <option value=@item.yardName>Yard name: @item.yardName ~~~~ @item.yardLocation ~ @item.yardCountry</option>
+                        }
+                    </select><br />
+
+                    <div class="editor-label">
+                        <label for="yardName">Type in the Yard Name : </label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.selectedYardName, new { htmlAttributes = new { @class = "form-control", @id = "yardNameTextField", @readonly = "readonly" } })
+                    </div>
+                </div><br />
+                <hr>
+                <div>
+                    <h3><b>Vessel Details</b></h3>
+                    <label id="Label9" Font-Size="10pt">Select Vessel : </label>
+
+                    <select class="form-control" id="vesselName" style="min-width: 600px" onclick="Vessel()">
+                        @foreach (var item in Model.vesselList)
+                        {
+                            <option value=@item.vesselName>Vessel name: @item.vesselName ~~~~ @item.containers ~ @item.destinationYard ~ @item.arrivalYard</option>
+                        }
+                    </select><br />
+
+                    <div class="editor-label">
+                        <label for="vesselName">Type in the Vessel Name : </label>
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.selectedVesselName, new { htmlAttributes = new { @class = "form-control", @id = "vesselNameTextField", @readonly = "readonly" } })
+                    </div>
+                </div>
+                <br />
+                <button type="submit" id="submitBtn" class="btn btn-success">Submit</button>
+            </fieldset>
+        }
+    </p>
+</form>
+
+<script>
+    function Cargo() {
+        var cargoName = document.getElementById('cargoID').value;
+        document.getElementById('cargoNameTextField').value = cargoName;
+    }
+    function Yard() {
+        var yardName = document.getElementById('yardName').value;
+        document.getElementById('yardNameTextField').value = yardName;
+    }
+    function Vessel() {
+        var vesselName = document.getElementById('vesselName').value;
+        document.getElementById('vesselNameTextField').value = vesselName;
+    }
+</script>

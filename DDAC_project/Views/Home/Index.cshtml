@@ -1,0 +1,106 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron">
+    <p align="center">
+        <img style="height: 150px; width: 600px;" src="Images/Maersk_Line_Logo.jpg" />
+    </p>
+    <p class="lead">
+        A.P. Moller - Maersk
+        A.P. Moller - Maersk is an integrated transport and logistics company with multiple brands and is a global leader in container shipping and ports. Including a stand-alone Energy division.
+    </p>
+    <p><a href="http://www.maersk.com/en/the-maersk-group/about-us" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+</div>
+
+<div class="btn-group btn-group-justified">
+    <table style="width:100%;">
+        <tr>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("Create New Cargo", "CreateCargo", "Home")</li>
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("Create New Yard", "CreateYard", "Home")</li>
+                    
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("Create New Vessel", "CreateVessel", "Home")</li>
+                    
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:190px; text-align:center;">@Html.ActionLink("Create New Schedule", "CreateSchedule", "Home")</li>
+                    
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("New Booking", "NewBooking", "Home")</li>
+                    
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("View Cargo", "ViewCargo", "Home")</li>
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("View Yard", "ViewYard", "Home")</li>
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("View Vessel", "ViewVessel", "Home")</li>
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("View Schedule", "ViewSchedule", "Home")</li>
+                </ul>
+            </td>
+            <td>
+                <ul class="nav navbar-nav">
+                    <li style="font-size: medium; background-color:blanchedalmond; color:black; border:solid 1px; border-radius: 10px; width:170px; text-align:center;">@Html.ActionLink("Cancel Booking", "CancelBooking", "Home")</li>
+                </ul>
+            </td>
+        </tr>
+    </table>
+</div>
+<br/>
+
+<div class="row">
+    <div class="col-md-4">
+        <div>
+            <img style="height: 200px; width: 300px;" src="Images/maersk1.jpg" />
+        </div>
+        <h2>Trade and Transport</h2>
+        <p>
+            To enable and facilitate global supply chains and provide opportunities for our customers to trade globally.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <div>
+            <img style="height: 200px; width: 300px;" src="Images/maersk2.jpg" />
+        </div>
+        <h2>Energy</h2>
+        <p>
+            To generate efficient and sustainable energy from natural resource to become the driving force in world markets.
+        </p>
+    </div>
+    <div class="col-md-4">
+        <img style="height: 200px; width: 300px;" src="Images/maersk3.jpg" height="234" width="436" />
+        <h2>Growth commitment</h2>
+        <p>
+            Adhering to environmental responsibilities to create growth for the Maersk community and society as a whole.
+        </p>
+    </div>
+</div>
